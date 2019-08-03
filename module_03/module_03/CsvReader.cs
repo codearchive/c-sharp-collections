@@ -1,8 +1,10 @@
-﻿namespace module_03
+﻿using System.IO;
+
+namespace module_03
 {
     class CsvReader
     {
-        private string _csvFilePath;
+        private readonly string _csvFilePath;
 
         public CsvReader(string csvFilePath)
         {
@@ -12,6 +14,19 @@
         public Country[] ReadFirstNCountries(int nCountries)
         {
             Country[] countries = new Country[nCountries];
+
+            using (StreamReader streamReader = new StreamReader(_csvFilePath))
+            {
+                // read header line
+                streamReader.ReadLine();
+
+                for (int i = 0; i < nCountries; i++)
+                {
+                    string csvLine = streamReader.ReadLine();
+                    countries[i] = ReadCountryFromCsvLine(csvLine);
+                }
+            }
+
             return countries;
         }
 

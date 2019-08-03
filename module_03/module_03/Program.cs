@@ -6,7 +6,7 @@ namespace module_03
     {
         static void Main()
         {
-            string filePath = @"Pop by Largest Final.csv";
+            string filePath = @"./Pop by Largest Final.csv";
             CsvReader reader = new CsvReader(filePath);
 
             Country[] countries = reader.ReadFirstNCountries(10);
