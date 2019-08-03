@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Country.cs" />
     <Compile Include="CsvReader.cs" />
+    <Compile Include="PopulationFormatter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
