@@ -12,7 +12,7 @@ namespace module_04
 
             List<Country> countries = reader.ReadAllCountries();
             Country lilliput = new Country("Lilliput", "LIL", "Somewhere", 2000000);
-            int lilliputIndex;
+            int lilliputIndex = countries.FindIndex(x => x.Population < 2000000);
             countries.Insert(lilliputIndex, lilliput);
 
             foreach (Country country in countries)
