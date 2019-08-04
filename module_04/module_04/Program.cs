@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace module_04
 {
@@ -9,7 +10,7 @@ namespace module_04
             string filePath = @"./Pop by Largest Final.csv";
             CsvReader reader = new CsvReader(filePath);
 
-            Country[] countries = reader.ReadAllCountries(10);
+            List<Country> countries = reader.ReadAllCountries();
 
             foreach (Country country in countries)
             {
