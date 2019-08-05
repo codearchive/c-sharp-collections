@@ -10,3 +10,4 @@ This repository aims to learn C# language and improving skills with the course b
 - [Module 2 - Introducing Collections and Arrays](module_02)
 - [Module 3 - Importing from a Data Source into an Array](module_03)
 - [Module 4 - Resizing Collections with Lists](module_04)
+- [Module 5 - Storing Keyed Data with Dictionaries](module_05)
