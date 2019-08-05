@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace module_05a
 {
@@ -13,6 +14,9 @@ namespace module_05a
             var countries = new Dictionary<string, Country>();
             countries.Add(norway.Code, norway);
             countries.Add(finland.Code, finland);
+
+            Country selectedCountry = countries["NOR"];
+            Console.WriteLine(selectedCountry.Name);
         }
     }
 }
