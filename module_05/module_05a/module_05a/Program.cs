@@ -13,10 +13,8 @@ namespace module_05a
             // Dictionary<string, Country> countries = new Dictionary<string, Country>();
             var countries = new Dictionary<string, Country>{{norway.Code, norway}, {finland.Code, finland}};
 
-            foreach (var country in countries.Values)
-            {
-                Console.WriteLine(country.Name);
-            }
+            bool exists = countries.TryGetValue("MUS", out Country country);
+            Console.WriteLine(exists ? country.Name : "There is no country with the code MUS");
         }
     }
 }
