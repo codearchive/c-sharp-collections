@@ -15,8 +15,10 @@ namespace module_05a
             countries.Add(norway.Code, norway);
             countries.Add(finland.Code, finland);
 
-            Country selectedCountry = countries["NOR"];
-            Console.WriteLine(selectedCountry.Name);
+            foreach (var country in countries)
+            {
+                Console.WriteLine(country.Key);
+            }
         }
     }
 }
