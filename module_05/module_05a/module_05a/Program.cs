@@ -11,9 +11,7 @@ namespace module_05a
             Country finland = new Country("Finland", "FIN", "Europe", 5_511_303);
 
             // Dictionary<string, Country> countries = new Dictionary<string, Country>();
-            var countries = new Dictionary<string, Country>();
-            countries.Add(norway.Code, norway);
-            countries.Add(finland.Code, finland);
+            var countries = new Dictionary<string, Country>{{norway.Code, norway}, {finland.Code, finland}};
 
             foreach (var country in countries.Values)
             {
