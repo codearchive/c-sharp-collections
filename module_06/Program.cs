@@ -29,7 +29,7 @@ namespace module_06
                 }
 
                 Country country = countries[i];
-                Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
+                Console.WriteLine($"{i + 1}{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
             }
         }
     }
