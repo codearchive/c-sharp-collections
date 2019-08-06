@@ -14,7 +14,7 @@ namespace module_07
             List<Country> countries = reader.ReadAllCountries();
 
             //foreach (Country country in countries.Take(10).OrderBy(x => x.Name))
-            foreach (Country country in countries.OrderBy(x => x.Name).Take(10))
+            foreach (Country country in countries.Take(20).Where(x => !x.Name.Contains(',')))
             {
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
             }
