@@ -13,7 +13,7 @@ namespace module_07
 
             List<Country> countries = reader.ReadAllCountries();
 
-            foreach (Country country in countries.Take(10))
+            foreach (Country country in countries.OrderBy(x => x.Name))
             {
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
             }
