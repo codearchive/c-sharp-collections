@@ -12,7 +12,7 @@ namespace module_06
 
             List<Country> countries = reader.ReadAllCountries();
 
-            Console.WriteLine("Enter no. of countries to display: ");
+            Console.WriteLine("Enter no. of countries to display:");
             bool inputIsInt = int.TryParse(Console.ReadLine(), out int userInput);
             if (!inputIsInt || userInput <= 0)
             {
@@ -20,9 +20,14 @@ namespace module_06
                 return;
             }
 
-            int maxToDisplay = Math.Min(userInput, countries.Count);
-            for (int i = 0; i < maxToDisplay; i++)
+            for (int i = 0; i < countries.Count; i++)
             {
+                if (i > 0 && (i % userInput == 0))
+                {
+                    Console.WriteLine("Hit return to continue, anything else to quit");
+                    if (Console.ReadLine() != "") break;
+                }
+
                 Country country = countries[i];
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
             }
