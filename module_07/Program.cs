@@ -13,11 +13,13 @@ namespace module_07
 
             List<Country> countries = reader.ReadAllCountries();
 
-            //foreach (Country country in countries.Take(10).OrderBy(x => x.Name))
-            foreach (Country country in countries.Take(20).Where(x => !x.Name.Contains(',')))
+            foreach (Country country in countries.Where(x => !x.Name.Contains(',')).Take(20))
             {
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
             }
+
+            for (int i = 12; i <= 14; i++)
+                Console.WriteLine(countries[i].Name);
         }
     }
 }
