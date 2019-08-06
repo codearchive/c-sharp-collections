@@ -12,13 +12,16 @@ namespace module_06
 
             List<Country> countries = reader.ReadAllCountries();
 
-            Country lilliput = new Country("Lilliput", "LIL", "Somewhere", 2000000);
-            int lilliputIndex = countries.FindIndex(x => x.Population < 2000000);
-            countries.Insert(lilliputIndex, lilliput);
+            Console.WriteLine("Enter no. of countries to display: ");
+            bool inputIsInt = int.TryParse(Console.ReadLine(), out int userInput);
+            if (!inputIsInt || userInput <= 0)
+            {
+                Console.WriteLine("You must type in a +ve integer. Existing");
+                return;
+            }
 
-            countries.RemoveAt(lilliputIndex);
-
-            for (int i = 0; i < countries.Count; i++)
+            int maxToDisplay = Math.Min(userInput, countries.Count);
+            for (int i = 0; i < maxToDisplay; i++)
             {
                 Country country = countries[i];
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
